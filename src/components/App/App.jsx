@@ -15,7 +15,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import CreateCrush from '../CreateCrush/CreateCrush';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -42,6 +42,7 @@ function App() {
           {/* Visiting localhost:5173/about will show the about page. */}
           <Route
             // shows AboutPage at all times (logged in or not)
+            // no plan for this page
             exact
             path="/about"
           >
@@ -61,11 +62,11 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+            // logged in shows CreateCrush else shows LoginPage
             exact
-            path="/info"
+            path="/CreateCrush"
           >
-            <InfoPage />
+            <CreateCrush />
           </ProtectedRoute>
 
           <Route

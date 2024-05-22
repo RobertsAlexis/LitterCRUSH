@@ -26,7 +26,7 @@ function RegisterForm() {
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
         </h3>
-      )}
+      )}  1 QW
       <div>
         <label htmlFor="username">
           Username:
