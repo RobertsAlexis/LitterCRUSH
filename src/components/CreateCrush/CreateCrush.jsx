@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
-// TO DO:
+// TODO:
 // X Create form
 // X Add local state
 // _ Dispatch redux actions or display a part of redux state 
@@ -58,6 +58,7 @@ function CreateCrush() {
 
   return (
     <div className="container">
+      <h3>ADD NEW CRUSH!</h3>
       <p>What did you CRUSH?</p>
       <input
         type="text"
@@ -74,7 +75,7 @@ function CreateCrush() {
         <input
         type="number"
         value={newLocation}
-        onChange={event => setNewLocation(event.target.value)}
+        onChange={event => setNewPhoto(event.target.value)}
       />
       <p>How many bags did you collect?</p>
         <input

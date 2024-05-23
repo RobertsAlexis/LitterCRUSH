@@ -13,8 +13,8 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
+import LitterCRUSHED from '../LitterCRUSHED/LitterCRUSHED';
+import UserPage from '../Profile/Profile';
 import CreateCrush from '../CreateCrush/CreateCrush';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -39,14 +39,13 @@ function App() {
           {/* Visiting localhost:5173 will redirect to localhost:5173/home */}
           <Redirect exact from="/" to="/home" />
 
-          {/* Visiting localhost:5173/about will show the about page. */}
+          {/* Visiting localhost:5173/LitterCRUSHED will show the LitterCRUSHED page. */}
           <Route
-            // shows AboutPage at all times (logged in or not)
-            // no plan for this page
+            // shows LitterCRUSHED at all times (logged in or not)
             exact
-            path="/about"
+            path="/LitterCRUSHED"
           >
-            <AboutPage />
+            <LitterCRUSHED />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
