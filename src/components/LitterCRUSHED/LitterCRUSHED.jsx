@@ -1,17 +1,27 @@
 import React from 'react';
+import { useSelector} from 'react-redux';
+// import CRUSHedItem from './CRUSHedItem';
 
-// This is one of our simplest components
-// It doesn't have local state,
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is'
 
 function LitterCRUSHED() {
+
+  const posts = useSelector(store => store.posts);
+
   return (
     <div className="container">
-      <div>
-        <p>This will be the newsfeed!</p>
-      </div>
-    </div>
+            <table>
+                <thead>
+                    <tr>
+                        <p>This will be the newsfeed!</p>
+                    </tr>
+                </thead>
+                {/* <tbody>
+                    {posts.map(post => {
+                        return <CRUSHedItem key={post.post_id} post={post} />
+                    })}
+                </tbody> */}
+            </table>
+        </div>
   );
 }
 

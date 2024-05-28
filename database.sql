@@ -7,12 +7,24 @@ CREATE TABLE "user" (
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL
 );
+-- Pratice Data
+INSERT INTO "user" ("username", "password")
+VALUES ('Mozzarella', 'woof'), ('Mitchell', 'i<3u')
+
+
 CREATE TABLE "post" (
-	post_id SERIAL PRIMARY KEY
-	user_id text > user.user_id
-	crush_text text
-	date_time timestamp with time zone
-	where_crushed text
-	photo_url integer
-	star_count integer > user.star_count
-)
+	"post_id" SERIAL PRIMARY KEY,
+	"user_id" VARCHAR,
+	"crush_text" VARCHAR,
+	"date_time" NULL,
+	"where_crushed" VARCHAR,
+	"photo_url" NULL,
+	"star_count" VARCHAR
+);
+-- "date_time" timestamp with time zone,
+
+
+-- Pratice Data
+INSERT INTO "post" ("user_id", "crush_text", "where_crushed", "star_count")
+VALUES ('Mozzarella', 'Spent the day at the River', 'Minnehaha Off-Leash Dog Park', '3'), 
+       ('Mitchell', 'Cleaning up the Grand Rounds!', 'Lake Bde Maka Ska', '29');
