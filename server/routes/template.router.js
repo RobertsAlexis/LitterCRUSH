@@ -6,7 +6,16 @@ const router = express.Router();
  * GET route template
  */
 router.get('/', (req, res) => {
-  // GET route code here
+  // Get all of the students in the table
+  const sqlText = `SELECT * FROM students ORDER BY id ASC`;
+  pool.query(sqlText)
+      .then((result) => {
+          res.send(result.rows);
+      })
+      .catch((error) => {
+          console.log(`Error making database query ${sqlText}`, error);
+          res.sendStatus(500);
+      });
 });
 
 /**

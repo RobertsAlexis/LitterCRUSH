@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
 // TODO:
@@ -15,46 +15,40 @@ function CreateCrush() {
 
   const dispatch = useDispatch();
   const history = useHistory();
+  const userId = useSelector((store) => store.user.id);
 
-  //Defining a local state to store the user's new crush
-  const [newCrush , setNewCrush] = useState('');
-  const [newLocation , setNewLocation] = useState('');
-  const [newPhoto , setNewPhoto] = useState('');
-  const [newBag , setNewBag] = useState('');
+  // Defining a local state to store the user's new crush
+  const [crushed_text , setCrushed_text] = useState('');
+  const [where_crushed , setWhere_crushed] = useState('');
+    // const [date_time , setDate_time] = useState(''); 
+  const [photo_url , setPhoto_url] = useState('');
+  const [star_count , setStar_count] = useState('');
 
-  //Back button
+
+  // Back button
   const back = () => {
     history.push('/')
   }
 
-  function addingCrush () {
-        // Tell redux that we want to add the new element
-        dispatch({
-          type:'ADD_CRUSH',
-          // Pass in the element name, that we're tracking in state
-          payload: newCrush,
-        })
-        dispatch({
-          type:'ADD_LOCATION',
-          // Pass in the element name, that we're tracking in state
-          payload: newLocation,
-        })
-        dispatch({
-          type:'ADD_PHOTO',
-          // Pass in the element name, that we're tracking in state
-          payload: newPhoto,
-        })
-        dispatch({
-          type:'ADD_BAG',
-          // Pass in the element name, that we're tracking in state
-          payload: newBag,
-        })
-        // ADD LOGIC TO TURN BAG COUNT 1:1 TO STAR COUNT
-        // clear
-        setNewCrush ('');
-        history.push('/home');
-  };
+ // const createWhen = () => {
+    // const createdDate = new DateTime(now);
+    //  const currentDateTime = new Date();
+    //  setDate_time(currentDateTime.toString());
 
+  const newCrush = {
+    // post_id,
+    user_id: userId,
+    crushed_text,
+    where_crushed,
+    // date_time: createdDate,
+    photo_url,
+    star_count
+  }
+
+  dispatch({
+    type: 'ADD_POST',
+    payload: newCrush,
+  });
 
   return (
     <div className="container">
@@ -62,39 +56,47 @@ function CreateCrush() {
       <p>What did you CRUSH?</p>
       <input
         type="text"
-        value={newCrush}
-        onChange={event => setNewCrush (event.target.value)}
+        placeholder="" 
+        value={crushed_text}
+        onChange={event => setCrushed_text (event.target.value)}
        />
        <p>Where were you CRUSHING?</p>
       <input
         type="number"
-        value={newLocation}
-        onChange={event => setNewLocation(event.target.value)}
+        placeholder="" 
+        value={where_crushed}
+        onChange={event => setWhere_crushed(event.target.value)}
       />
+        {/* <input
+        type="number"
+        value={date_time}
+        onChange={event => setDate_time(event.target.value)}
+      /> */}
       <p>Add a photo of everything you collected!</p>
         <input
         type="number"
-        value={newLocation}
-        onChange={event => setNewPhoto(event.target.value)}
+        value={photo_url}
+        onChange={event => setPhoto_url(event.target.value)}
       />
       <p>How many bags did you collect?</p>
         <input
         type="number"
-        value={newLocation}
-        onChange={event => setNewBag(event.target.value)}
+        placeholder="" 
+        value={star_count}
+        onChange={event => setStar_count (event.target.value)}
       />
-      <p> {} you earned points 🌟 </p>
+      <p>star_count {} you earned points 🌟 </p>
       <p></p>      
       <button 
         variant='contained'
-        onClick={addingCrush}
+        onSubmit={newCrush}
         >ADD CRUSH</button>
       <p></p>
       <button 
-        onClick={back
-        }>Back</button>
+        onClick={back}
+        >Back</button>
     </div>
   );
-}
+};
 
 export default CreateCrush;

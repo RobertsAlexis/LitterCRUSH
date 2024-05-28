@@ -14,6 +14,15 @@ const middlewareList = process.env.NODE_ENV === 'development' ?
   [sagaMiddleware, logger] :
   [sagaMiddleware];
 
+//   const CreateCrush = (state = '', action) => {
+//     console.log("I'm the CreateCrush reducer", state)
+
+//     if(action.type === 'ADD_CREATE') {
+//         return action.payload
+//     }
+//     return state
+// }
+
 const store = createStore(
   // tells the saga middleware to use the rootReducer
   // rootSaga contains all of our other reducers
