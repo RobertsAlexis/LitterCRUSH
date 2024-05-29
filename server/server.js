@@ -9,7 +9,7 @@ const passport = require('./strategies/user.strategy');
 
 // Route Includes
 const userRouter = require('./routes/user.router');
-const userPostsRouter = require('./routes/userposts.router');
+const userPostsRouter = require('./routes/userpost.router');
 const postsRouter = require('./routes/posts.router');
 
 // Express Middleware
@@ -26,7 +26,7 @@ app.use(passport.session());
 
 // Routes
 app.use('/api/user', userRouter);
-app.use('/api/new-post', userPostsRouter);
+app.use('/api/user-post', userPostsRouter);
 app.use('/api/posts', postsRouter);
 
 // Listen Server & Port

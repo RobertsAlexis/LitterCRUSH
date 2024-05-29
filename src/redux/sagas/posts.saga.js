@@ -1,20 +1,43 @@
-import { takeLatest } from "redux-saga/effects";
+import axios from 'axios';
+import { put, takeLatest } from 'redux-saga/effects';
 
-function* addUserPost(action) {
-    console.log('addUserPost Saga', action.payload);
+
+
+  function* fetchPosts() {
     try {
-        yield axios.post('/api/new-post', action.payload);
-        yield put ({
-            type: 'FETCH_USER_POSTS',
-            payload: action.payload,
-        });
+      let response = yield axios({
+        method: 'GET',
+        url: '/api/posts'
+      });
+  
+      yield put({
+        type: 'SET_POSTS',
+        payload: response.data
+      });
     } catch (err) {
-        console.log('AXIOS | POST in ADD post', err);
+      console.log('This error is', err)
     }
-}
+  };
+  
+  
+  // const deletePosts = (state = [], action) => {
+  //   switch (action.type) {
+  //     case 'DELETE_POST':
+  //       return action.payload;
+  //     default:
+  //       return state;
+  //   }
+  // };
 
-function userPostsSaga () {
-    yield takeLatest('ADD_USER_POST', addUserPost);
-}
-
-export default userPostsSaga;
+  // function* deletePost(action) {
+  //   try {
+  //     yield axios.delete(`api/posts/${action.payload}`);
+  //     yield put({
+  //       type: 'DELETE_POST',
+  //       payload: action.payload
+  //     });
+  //   }
+  //   catch (err) {
+  //     console.log('Error in Delete', err)
+  //   }
+  // };

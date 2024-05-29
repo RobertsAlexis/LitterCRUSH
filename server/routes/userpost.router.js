@@ -3,7 +3,9 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.post('/', (req, res) => {
-    const newPost = req.body;
+    console.log('wheeeeeere is the post?', req.body);
+    const newPost = req.body.post;
+        // post is the key (from user.post.saga)
     const addNewPost = 'INSERT INTO "post" ("user_id", "crush_text", "where_crushed", "star_count") VALUES ($1, $2, $3, $4);';
     const queryValues = [
         newPost.user_id,
@@ -17,10 +19,12 @@ router.post('/', (req, res) => {
             res.sendStatus(201);
         })
         .catch ((err) => {
-            console.log(`Error in POST '/api/new-post'`, err);
+            console.log(`Error making database query ${sqlText}`, err);
             res.sendStatus(500);
         });
 });
 
 
 module.exports = router;
+
+// test by doing local host 5001/api - should be able to see json data 

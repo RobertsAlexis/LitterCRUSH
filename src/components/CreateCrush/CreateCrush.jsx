@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
+
 // TODO:
 // X Create form
 // X Add local state
@@ -18,7 +19,7 @@ function CreateCrush() {
   const userId = useSelector((store) => store.user.id);
 
   // Defining a local state to store the user's new crush
-  const [crushed_text , setCrushed_text] = useState('');
+  const [crush_text , setCrush_text] = useState('');
   const [where_crushed , setWhere_crushed] = useState('');
   // const [date_time , setDate_time] = useState(''); 
   // const [photo_url , setPhoto_url] = useState('');
@@ -30,39 +31,43 @@ function CreateCrush() {
     history.push('/')
   }
 
- // const createWhen = () => {
+ const newCrush = () => {
     // const createdDate = new DateTime(now);
     //  const currentDateTime = new Date();
     //  setDate_time(currentDateTime.toString());
 
-  const newCrush = {
+  const crush = {
     // post_id,
     user_id: userId,
-    crushed_text,
+    crush_text,
     where_crushed,
     // date_time: createdDate,
     // photo_url,
     star_count
   }
-
+  console.log('are we crushing?', crush)
   dispatch({
     type: 'ADD_POST',
-    payload: newCrush,
+    payload: crush,
   });
+
+ }
 
   return (
     <div className="container">
       <h3>ADD NEW CRUSH!</h3>
       <p>What did you CRUSH?</p>
+      <form onSubmit={()=>newCrush()}>
+        {/* Callback function to say hey 'when clicked, run this function' */}
       <input
         type="text"
         placeholder="" 
-        value={crushed_text}
-        onChange={event => setCrushed_text (event.target.value)}
+        value={crush_text}
+        onChange={event => setCrush_text (event.target.value)}
        />
        <p>Where were you CRUSHING?</p>
       <input
-        type="number"
+        type="text"
         placeholder="" 
         value={where_crushed}
         onChange={event => setWhere_crushed(event.target.value)}
@@ -72,7 +77,7 @@ function CreateCrush() {
         value={date_time}
         onChange={event => setDate_time(event.target.value)}
       /> */}
-      {/* <p>Add a photo of everything you collected!</p>
+      {/* <p>Add a photo of everything you collected!</p> 
         <input
         type="number"
         value={photo_url}
@@ -89,8 +94,9 @@ function CreateCrush() {
       <p></p>      
       <button 
         variant='contained'
-        onSubmit={newCrush}
+        type="submit"
         >ADD CRUSH</button>
+        </form>
       <p></p>
       <button 
         onClick={back}

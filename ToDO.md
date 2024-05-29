@@ -35,3 +35,25 @@
 
 
 // uuid generator  
+
+DANE
+
+1 - add new post 
+_X_ui _x_saga _x_router _x_sql
+
+2 - Get all post litter crushed 
+__ui __saga __router __sql + __reducer 
+
+3 - get 1 post by id 
+_saga _route _sql
+
+4 - edit 1 post by id 
+_ui _saga _route _sql 
+
+5 - delete ` post by id
+
+6 - CSS
+
+7 - PHOTO api 
+
+8 - Maps api 
