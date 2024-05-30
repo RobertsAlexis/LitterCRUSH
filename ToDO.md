@@ -42,7 +42,7 @@ DANE
 _X_ui _x_saga _x_router _x_sql
 
 2 - Get all post litter crushed 
-__ui __saga __router __sql + __reducer 
+_x_ui _x_saga _x_router _x_sql + _x_reducer 
 
 3 - get 1 post by id 
 _saga _route _sql
