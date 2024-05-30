@@ -5,7 +5,6 @@ const posts = (state = [], action) => {
       default:
         return state;
     } 
-    console.log('in the post reducer', posts)
   };
  
 
