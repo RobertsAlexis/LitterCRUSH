@@ -44,16 +44,19 @@ _X_ui _x_saga _x_router _x_sql
 2 - Get all post litter crushed 
 _x_ui _x_saga _x_router _x_sql + _x_reducer 
 
-3 - get 1 post by id 
+3 - get 1 post by id (profile)
 _saga _route _sql
-
+sql query in post reducer to filter by single user  
 4 - edit 1 post by id 
 _ui _saga _route _sql 
 
 5 - delete ` post by id
 
-6 - CSS
+6. from add crush clear inputs and send to Litter CRUCSHED 
 
-7 - PHOTO api 
+7. CSS
 
-8 - Maps api 
+8. PHOTO api 
+
+9. Maps api 
+

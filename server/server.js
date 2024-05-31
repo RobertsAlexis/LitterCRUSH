@@ -11,6 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const userPostsRouter = require('./routes/userpost.router');
 const postsRouter = require('./routes/posts.router');
+const profileRouter = require('./routes/profile.router');
 
 // Express Middleware
 app.use(express.json());
@@ -28,6 +29,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/user-post', userPostsRouter);
 app.use('/api/posts', postsRouter);
+app.use('/api/profile', profileRouter);
 
 // Listen Server & Port
 app.listen(PORT, () => {

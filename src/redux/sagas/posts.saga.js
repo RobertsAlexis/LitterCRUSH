@@ -23,21 +23,6 @@ function* fetchPosts() {
 export default postsSaga;
 
 
-//   function* fetchPosts() {
-//     try {
-//       let response = yield axios({
-//         method: 'GET',
-//         url: '/api/posts'
-//       });
-  
-//       yield put({
-//         type: 'SET_POSTS',
-//         payload: response.data
-//       });
-//     } catch (err) {
-//       console.log('This error is', err)
-//     }
-//   };
   // const deletePosts = (state = [], action) => {
   //   switch (action.type) {
   //     case 'DELETE_POST':

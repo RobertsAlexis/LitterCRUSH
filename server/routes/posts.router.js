@@ -17,8 +17,4 @@ router.get('/', (req, res) => {
       });
   });
 
-
-  // console.log('in the post router', queryText)
-
-
   module.exports = router;
