@@ -3,7 +3,7 @@ const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 5001;
 
-// Middleware Includes
+/** ---------- MIDDLEWARE ---------- **/
 const sessionMiddleware = require('./modules/session-middleware');
 const passport = require('./strategies/user.strategy');
 
@@ -12,6 +12,7 @@ const userRouter = require('./routes/user.router');
 const userPostsRouter = require('./routes/userpost.router');
 const postsRouter = require('./routes/posts.router');
 const profileRouter = require('./routes/profile.router');
+const editRouter = require('./routes/edit.router');
 
 // Express Middleware
 app.use(express.json());
@@ -30,8 +31,9 @@ app.use('/api/user', userRouter);
 app.use('/api/user-post', userPostsRouter);
 app.use('/api/posts', postsRouter);
 app.use('/api/profile', profileRouter);
+app.use('/api/edit', editRouter);
 
-// Listen Server & Port
+/** ---------- Listen Server & Port ---------- **/
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });

@@ -21,26 +21,3 @@ function* fetchPosts() {
 };
 
 export default postsSaga;
-
-
-  // const deletePosts = (state = [], action) => {
-  //   switch (action.type) {
-  //     case 'DELETE_POST':
-  //       return action.payload;
-  //     default:
-  //       return state;
-  //   }
-  // };
-
-  // function* deletePost(action) {
-  //   try {
-  //     yield axios.delete(`api/posts/${action.payload}`);
-  //     yield put({
-  //       type: 'DELETE_POST',
-  //       payload: action.payload
-  //     });
-  //   }
-  //   catch (err) {
-  //     console.log('Error in Delete', err)
-  //   }
-  // };

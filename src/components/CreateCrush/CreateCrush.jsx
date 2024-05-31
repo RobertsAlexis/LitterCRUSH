@@ -17,6 +17,7 @@ function CreateCrush() {
   const dispatch = useDispatch();
   const history = useHistory();
   const userId = useSelector((store) => store.user.id);
+  // const username = useSelector((store) => store.user.username);
 
   // Defining a local state to store the user's new crush
   const [crush_text , setCrush_text] = useState('');
@@ -39,6 +40,7 @@ function CreateCrush() {
   const crush = {
     // post_id,
     user_id: userId,
+    // username,
     crush_text,
     where_crushed,
     // date_time: createdDate,

@@ -16,6 +16,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import LitterCRUSHED from '../LitterCRUSHED/LitterCRUSHED';
 import UserPage from '../Profile/Profile';
 import CreateCrush from '../CreateCrush/CreateCrush';
+import EditCrush from '../CreateCrush/EditCrush';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -67,6 +68,13 @@ function App() {
           >
             <CreateCrush />
           </ProtectedRoute>
+
+          <Route
+            exact
+            path="/EditCrush/api/edit/:post_id"  
+          >
+          <EditCrush />
+          </Route>
 
           <Route
             exact

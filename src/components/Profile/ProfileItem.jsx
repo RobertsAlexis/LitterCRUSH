@@ -2,38 +2,28 @@ import { useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function ProfileItem({ post }) {
-
+  // const edit = useSelector(store => store.edit);
   const history = useHistory();
 
-  // const goToEditForm = () => {
-  //   console.log('need to edit student with id of:', student.id)
-  //   history.push(`/edit_student/${student.id}`)
-  // }
+  const goToEditForm = () => {
+    console.log('need to edit post with id of:', post.post_id)
+    history.push(`/EditCrush/api/edit/${post.post_id}`)
+  }
 
   return (
     <tr>
-      <td>{post.user_id}</td>
+      <td>{post.post_id} {post.username}</td>
       <td>{post.crush_text}</td>
       <td>at {post.where_crushed}</td>
-      <td>{post.user_id} earned {post.star_count} stars!</td>
+      <td>{post.username} earned {post.star_count} stars!</td>
       <td>
-        {/* <button onClick={goToEditForm}>
-          Edit!
-        </button> */}
+        <button onClick={goToEditForm}>
+          Edit
+        </button>
       </td>
     </tr>
   );
-
-
-// function ProfileItem() {
-    // const post = useSelector(store => store.profile)
-    //     return (
-    //       <tr>
-    //         <td>{post.user_id}</td>
-    //         <td>{post.crush_text}</td>
-    //         <td>at {post.where_crushed}</td> 
-    //         <td>{post.user_id} earned {post.star_count} stars!</td>
-    //       </tr>
-    //     );
-      };
+};
   export default ProfileItem; 
+
+  ///:post.post_id ${edit.post_id}    
