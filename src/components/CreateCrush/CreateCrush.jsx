@@ -17,7 +17,9 @@ function CreateCrush() {
   const dispatch = useDispatch();
   const history = useHistory();
   const userId = useSelector((store) => store.user.id);
-  // const username = useSelector((store) => store.user.username);
+  const username = useSelector((store) => store.user.username);
+
+console.log("where is the username?", username)
 
   // Defining a local state to store the user's new crush
   const [crush_text , setCrush_text] = useState('');
@@ -40,19 +42,23 @@ function CreateCrush() {
   const crush = {
     // post_id,
     user_id: userId,
-    // username,
+    username,
     crush_text,
     where_crushed,
     // date_time: createdDate,
     // photo_url,
     star_count
   }
+
   console.log('are we crushing?', crush)
+
   dispatch({
     type: 'ADD_POST',
     payload: crush,
   });
 
+  
+// console.log("are we crusing?", crush)
  }
 
   return (
@@ -97,6 +103,7 @@ function CreateCrush() {
       <button 
         variant='contained'
         type="submit"
+        onClick={back}
         >ADD CRUSH</button>
         </form>
       <p></p>

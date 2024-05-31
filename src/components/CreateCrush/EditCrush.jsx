@@ -9,8 +9,7 @@ function EditCreateCrush() {
     const params = useParams()
     console.log('params is', params)
     const dispatch = useDispatch();
-
-    // const idOfPostToEdit = params.post_id
+    const idOfPostToEdit = params.post_id
 
     const history = useHistory()
     const back = () => {
