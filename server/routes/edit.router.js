@@ -1,6 +1,27 @@
 const express = require('express');
-const pool = require('../modules/pool');
+const pool = require('../modules/pool');         
 const router = express.Router();
+
+// GET /students/:id
+router.get('/:post_id', (req, res) => {
+    const sqlText = `
+      SELECT * FROM post
+        WHERE post_id = $1;
+    `
+    const sqlValues = [req.params.post_id]
+    pool.query(sqlText, sqlValues)
+      .then((dbRes) => {
+        const singlePost = dbRes.rows[0]
+        res.send(singlePost)
+      })
+      .catch((dbErr) => {
+        console.log('GET api/edit/:post_id error:', dbErr)
+        res.sendStatus(500)
+      })
+  })
+
+
+
 
 /* PUT route /api/edit/:post_id/ */
 router.put('/:post_id', (req, res) => {
