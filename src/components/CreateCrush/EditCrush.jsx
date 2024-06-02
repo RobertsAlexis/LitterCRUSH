@@ -7,37 +7,36 @@ import { useHistory } from 'react-router-dom'
 // NEED TO KNOW: The id of the post.
 function EditCreateCrush() {
     const params = useParams()
+    //params is route paramaters (whatever was defined in App.jsx)
     console.log('params is', params)
     const dispatch = useDispatch();
-    const idOfPostToEdit = params.post_id
+    // use this id to nake a GET request to obtain the data for the single post to edit. 
+    const postToEdit = params.post_id
 
     const history = useHistory()
     const back = () => {
       history.push('/')
     }
+    
+    useEffect(() => {
+      dispatch({
+        type: 'FETCH_POST_TO_EDIT',
+        payload: postToEdit
+      })
+    }, [])
 
-    // useEffect(() => {
-    //   dispatch({
-    //     type: 'FETCH_STUDENT_TO_EDIT',
-    //     payload: idOfStudentToEdit
-    //   })
-    // }, [])
- 
+
+  console.log('DID WE MAKE IT TO THE END OF THE EDIT COMPONENT? ', params)
     return (
       <div className="container">
         <h2>Edit Post: </h2>
         <form>
+          {}
           <input />
-          <button 
-          variant='contained'
-          type="submit"  
-          >Submit Edits
-          </button>
+          <button variant='contained'
+          type="submit">Submit Edits</button>
         </form>
-          <button 
-            onClick={back}
-            >Back
-          </button>
+          <button onClick={back}>Back</button>
       </div>
     );
 };

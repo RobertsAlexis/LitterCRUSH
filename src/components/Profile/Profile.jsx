@@ -4,12 +4,13 @@ import { useDispatch, useSelector} from 'react-redux';
 import ProfileItem from './ProfileItem';
 
 function Profile() {
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const posts = useSelector(store => store.profile);
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_PROFILE_POSTS' });
+    dispatch({ type: 'FETCH_PROFILE_POSTS',
+   });
   }, []);
 console.log('are we in the profile', posts)
   return (

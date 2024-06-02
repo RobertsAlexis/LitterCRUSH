@@ -3,7 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import posts from './posts.reducer.js';
 import profile from './profile.reducer.js';
-import edit from './edit.reducer.js';
+import postToEdit from './edit.reducer.js';
 import deletePost from './deletePost.reducer.js';
 
 // rootReducer is the primary reducer for our entire project
@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   posts, 
   profile,
-  edit,
+  postToEdit,
   deletePost,
 });
 

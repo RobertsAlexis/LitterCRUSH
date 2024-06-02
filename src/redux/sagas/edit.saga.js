@@ -3,12 +3,14 @@ import axios from 'axios';
 
 function* fetchPostToEdit(action) {
     try {
-    //   const idOfPost = action.payload
-  
-      const response = yield axios({
+      console.log('aaaaaaaaaaaare we in the edit saga?', fetchPostToEdit)
+      const idOfPost = action.payload
+      let response = yield axios({
         method: 'GET',
-        url: `/api/edit/:post_id/`
-      })
+        url: `/api/edit/:post_id/${idOfPost}`
+      });
+      console.log('in the edit saga', fetchPostToEdit)
+      // changing payload from postToEdit to response.data
       const postToEdit = response.data
       yield put({
         type: 'SET_POST_TO_EDIT',

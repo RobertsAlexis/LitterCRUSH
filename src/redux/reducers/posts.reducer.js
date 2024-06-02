@@ -1,3 +1,4 @@
+// REDUCER all the posts from the DB
 const posts = (state = [], action) => {
     switch (action.type) {
       case 'SET_POSTS':
@@ -5,7 +6,6 @@ const posts = (state = [], action) => {
       default:
         return state;
     } 
-    console.log('in the post reducer', posts)
   };
  
 
