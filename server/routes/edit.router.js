@@ -2,9 +2,9 @@ const express = require('express');
 const pool = require('../modules/pool');         
 const router = express.Router();
 
-// GET  --- SINGLE POST ---    /post/:post_id
+// step 1 // GET  --- SINGLE POST ---    /post/:post_id
 router.get('/:post_id', (req, res) => {
-  console.log('YOOOOOOOOOO GET /api/edit/:post_id error:', sqlValues)
+  // console.log('YOOOOOOOOOO GET /api/edit/:post_id error:', sqlValues)
     const sqlText = `
       SELECT * FROM post
         WHERE post_id = $1;
@@ -12,6 +12,7 @@ router.get('/:post_id', (req, res) => {
     const sqlValues = [req.params.post_id]
     pool.query(sqlText, sqlValues)
       .then((dbRes) => {
+        // object from the rows array
         const singlePost = dbRes.rows[0]
         res.send(singlePost)
       })
@@ -21,16 +22,13 @@ router.get('/:post_id', (req, res) => {
       })
   })
 
-
-
-
-/* PUT route /api/edit/:post_id/ */
+/* PUT route /EditCrush/api/edit/:post_id */
 router.put('/:post_id', (req, res) => {
     // Update this single post
     console.log('PUT /post/:post_id received a request!', postToUpdate)
     console.log('req.body is:', req.body)
     const postToUpdate = req.params.id;
-    const sqlText = `UPDATE post SET crush_text = $1 where_crushed = $2 star_count = $3 WHERE post_id = $4`;
+    const sqlText = `UPDATE post SET user_id = $1 username = $2 crush_text = $3 where_crushed = $4 star_count = $4`;
     pool.query(sqlText, [req.body.github_name, postToUpdate])
         .then((result) => {
             res.sendStatus(200);

@@ -5,25 +5,25 @@ import { useHistory } from 'react-router-dom'
 
 // Want to fetch the data for the post I want to edit!
 // NEED TO KNOW: The id of the post.
-function EditCreateCrush() {
+function EditCrush() {
     const params = useParams()
     //params is route paramaters (whatever was defined in App.jsx)
     console.log('params is', params)
     const dispatch = useDispatch();
     // use this id to nake a GET request to obtain the data for the single post to edit. 
-    const postToEdit = params.post_id
-
+    const idOfPostToEdit = params.post_id
     const history = useHistory()
-    const back = () => {
-      history.push('/')
-    }
+    const back = () => { history.push('/') }
     
     useEffect(() => {
       dispatch({
         type: 'FETCH_POST_TO_EDIT',
-        payload: postToEdit
+        payload: idOfPostToEdit
       })
     }, [])
+
+    const postToEdit = useSelector(store => store.postToEdit)
+
     // const getPost = () => {
     //   dispatch({ type: 'FETCH_POST_TO_EDIT' });
     // };
@@ -32,11 +32,25 @@ function EditCreateCrush() {
     // }, []);
 
   console.log('DID WE MAKE IT TO THE END OF THE EDIT COMPONENT? ', params)
-    return (
+
+  const handlePost_IdChange = (event) => {
+    dispatch({
+      type: 'EDIT_POST_ID_INPUT',
+      payload: event.target.value
+    })
+  }
+
+  return (
       <div className="container">
         <h2>Edit Post: </h2>
         <form>
-          {}
+          { // to prevent value from being undefined, using pretzles
+            postToEdit.post_id &&
+              <input 
+                value={postToEdit.post_id}
+                onChange={handlePost_IdChange}
+                />
+          }
           <input />
           <button variant='contained'
           type="submit">Submit Edits</button>
@@ -45,4 +59,5 @@ function EditCreateCrush() {
       </div>
     );
 };
-export default EditCreateCrush;
+
+export default EditCrush;
