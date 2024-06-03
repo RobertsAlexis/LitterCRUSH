@@ -7,7 +7,9 @@ function* fetchPosts() {
       method: 'GET',
       url: '/api/posts'
     });
+
     console.log('in the post saga', fetchPosts)
+    
     yield put({
       type: 'SET_POSTS',
       payload: response.data

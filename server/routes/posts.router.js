@@ -4,12 +4,12 @@ const router = express.Router();
 
 /* GET /post/:post_id */
 router.get('/', (req, res) => {
-  console.log('HEEEEEEEEEEEEEEEY we are in the posts router!!!', queryText)
+  // console.log('HEEEEEEEEEEEEEEEY we are in the posts router!!!', queryText)
     const queryText = `
       SELECT * FROM post 
     `
   pool.query(queryText)
-    .then((result) => {
+    .then((result) => { console.log('am i getting the POSTS data', result.rows)
       res.send(result.rows); 
       })
     .catch((err) => {

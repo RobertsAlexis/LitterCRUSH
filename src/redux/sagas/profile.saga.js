@@ -16,6 +16,7 @@ function* fetchProfilePosts() {
     });
   } catch (err) {
     console.log('This error is', err)
+    
   }
 }
   function* profileSaga () {
