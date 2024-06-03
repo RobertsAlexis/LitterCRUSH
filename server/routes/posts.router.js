@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   // console.log('HEEEEEEEEEEEEEEEY we are in the posts router!!!', queryText)
     const queryText = `
-      SELECT * FROM post 
+      SELECT * FROM post ORDER BY user_id ASC; 
     `
   pool.query(queryText)
     .then((result) => { console.log('am i getting the POSTS data', result.rows)

@@ -1,13 +1,15 @@
 function CRUSHedItem({ post }) {
 
   return (
-    <tr>
-      <td>{post.post_id} {post.username}</td>
-      <td>{post.crush_text}</td>
-      <td>at {post.where_crushed}</td> 
-      <td>{post.username} earned {post.star_count} stars!</td>
-    </tr>
+    <div className="grid-container">
+      <div>
+        🗑️ { post.username } earned { post.star_count } stars🌟 
+        <p>  { post.crush_text}  </p>
+        <p> at { post.where_crushed }📍</p>
+      </div>
+    </div>
   );
 }
 
 export default CRUSHedItem;
+// {post.post_id}

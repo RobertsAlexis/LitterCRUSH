@@ -64,14 +64,16 @@ function CreateCrush() {
  }
 
   return (
-    <div className="container">
-      <h3>ADD NEW CRUSH!</h3>
-      <p>What did you CRUSH?</p>
+    <div >
+      <h3 className="profile-container">ADD NEW CRUSH!</h3>
+      <div className="grid-container">
+      
       <form onSubmit={(event) => {
         event.preventDefault();
         newCrush();
         SubmitGoToFeed();
       }}>
+      <p>What did you CRUSH?</p>
       <input
         type="text"
         placeholder="" 
@@ -106,14 +108,17 @@ function CreateCrush() {
       {/* <p>star_count {} you earned points 🌟 </p> */}
       <p></p>      
       <button 
+        className="btn"
         variant='contained'
         type="submit"
         >ADD CRUSH</button>
         </form>
       <p></p>
       <button 
+      className="btn"
         onClick={back}
         >Back</button>
+    </div>
     </div>
   );
 };

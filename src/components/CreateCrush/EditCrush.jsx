@@ -11,25 +11,32 @@ function EditCrush() {
     console.log('params is', params)
     const dispatch = useDispatch();
     // use this id to nake a GET request to obtain the data for the single post to edit. 
-    const post_id= params.post_id
+    const post_id = params.post_id
     const history = useHistory()
     const back = () => { history.push('/') }
     
+    // useEffect(() => {
+    //   dispatch({
+    //     type: 'FETCH_POST_TO_EDIT',
+    //     payload: post_id
+    //   })
+    // }, [])
     useEffect(() => {
       dispatch({
         type: 'FETCH_POST_TO_EDIT',
         payload: post_id
-      })
-    }, [])
-
+      });
+    }, [dispatch, post_id]);
+    
     const postToEdit = useSelector(store => store.postToEdit)
+    // const post = useSelector(store => store.post)
 
-    // const getPost = () => {
-    //   dispatch({ type: 'FETCH_POST_TO_EDIT' });
-    // };
-    // useEffect(() => {
-    //   getPost();
-    // }, []);
+    const getPost = () => {
+      dispatch({ type: 'FETCH_POST_TO_EDIT' });
+    };
+    useEffect(() => {
+      getPost();
+    }, []);
 
   console.log('DID WE MAKE IT TO THE END OF THE EDIT COMPONENT? ', params)
 

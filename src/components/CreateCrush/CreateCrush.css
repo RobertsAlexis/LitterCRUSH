@@ -1,0 +1,36 @@
+.profile-container {
+    background-color: lightgreen;
+    grid-gap: 10px;
+    padding: 20px;
+    inline-size: flex;
+    border-block-start-style: solid;
+    border-block-end-style: solid;
+    border-block-start-width: 10px;
+    border-block-end-width: 10px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    font-size: 30px;
+}
+.profile-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 50 10;
+    
+  }
+
+ .grid-container {
+    background-color: lightgreen;
+    grid-gap: 10px;
+    padding: 10px;
+    inline-size: flex;
+    border-block-start-style: solid;
+    border-block-start-width: 5px;
+    font-family: "Times New Roman", Times, serif;
+        margin-left: 25%;
+        margin-right:25%;
+        width: 50%;
+ }
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0;
+    font-size: 30px;
+  }
