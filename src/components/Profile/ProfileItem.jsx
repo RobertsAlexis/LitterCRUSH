@@ -7,8 +7,7 @@ function ProfileItem({ post }) {
 
   const goToEditForm = () => {
     console.log('need to edit post with id of:', post.post_id)
-    history.push(`/EditCrush/api/edit/:post_id/${post.post_id}`)
-    // history.push(`/EditCrush/api/edit/${post.post_id}`)
+    history.push(`/EditCrush/api/edit/:post_id${post.post_id}`)
   }
 
   return (

@@ -5,10 +5,10 @@ import axios from 'axios';
 function* fetchPostToEdit(action) {
     try {
       console.log('aaaaaaaaaaaare we in the edit saga?', fetchPostToEdit)
-      const idOfPostToEdit = action.payload
+      const post_id = action.payload
       let response = yield axios({
         method: 'GET',
-        url: `/api/edit/:post_id/${idOfPostToEdit}`
+        url: `/EditCrush/api/edit/:post_id${post_id}`
       });
       console.log('in the edit saga', fetchPostToEdit)
       // changing payload from postToEdit to response.data

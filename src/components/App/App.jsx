@@ -71,7 +71,7 @@ function App() {
 
           <Route
             exact
-            path="/EditCrush/api/edit/:post_id"  
+            path="/EditCrush/api/edit/:post_id/"  
           >
           <EditCrush />
           </Route>
@@ -120,7 +120,7 @@ function App() {
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
-            <h1>404</h1>
+            <h1>Bitch you lost 404</h1>
           </Route>
         </Switch>
         <Footer />

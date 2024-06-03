@@ -11,14 +11,14 @@ function EditCrush() {
     console.log('params is', params)
     const dispatch = useDispatch();
     // use this id to nake a GET request to obtain the data for the single post to edit. 
-    const idOfPostToEdit = params.post_id
+    const post_id= params.post_id
     const history = useHistory()
     const back = () => { history.push('/') }
     
     useEffect(() => {
       dispatch({
         type: 'FETCH_POST_TO_EDIT',
-        payload: idOfPostToEdit
+        payload: post_id
       })
     }, [])
 
@@ -47,7 +47,7 @@ function EditCrush() {
           { // to prevent value from being undefined, using pretzles
             postToEdit.post_id &&
               <input 
-                value={postToEdit.post_id}
+                value={postToEdit.crush_text}
                 onChange={handlePost_IdChange}
                 />
           }

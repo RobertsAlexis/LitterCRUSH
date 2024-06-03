@@ -31,7 +31,7 @@ app.use('/api/user', userRouter);
 app.use('/api/user-post', userPostsRouter);
 app.use('/api/posts', postsRouter);
 app.use('/api/profile', profileRouter);
-app.use('/api/edit/:post_id/${idOfPost}', editRouter);
+app.use('/EditCrush/api/edit/:post_id/', editRouter);
 
 /** ---------- Listen Server & Port ---------- **/
 app.listen(PORT, () => {
