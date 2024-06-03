@@ -9,11 +9,17 @@ import './AboutPage.css';
 function AboutPage() {
   return (
     <div className="grid-container">
-        <div> Technologies used: I used React, Redux, Node, & Express</div>
-        <div> The toughest challange I enountered while building LitterCRUSH was the size and complexity. The amount of time I guessed things would take was apparently on the same skewed timescale as homerenovations  </div>
-        <div> Crushing soon: Photo API and Like / comment buttons </div>
+        <h3> Technologies used:</h3>
+        <div>  React, Redux, Node, & Express</div>
+        <h3> Greatest Challange: </h3>
+        <div> Building LitterCRUSH was far more compleax than orginally anticipated. The amount of time I guessed things would take was wildly inaccurate. It was much closer to the same skewed timescale as homerenovations  </div>
+        <h3> Crushing soon: </h3>
+        <div> Photo API, Like & comment functionality</div>
+        <h3> Alexis Roberts </h3>
         <div> https://www.linkedin.com/in/alexis-roberts-mlps </div>
+        <h2> THANK YOU!</h2>
     </div>
+
   );
 }
 

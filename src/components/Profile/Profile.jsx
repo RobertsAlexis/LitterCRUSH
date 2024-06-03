@@ -19,7 +19,8 @@ console.log('are we in the profile', posts)
       <div className="profile-container">
         <h2>Welcome, {user.username}!</h2>
         <p>Your ID is: {user.id}</p>
-        <p> You have earned 5 stars, keep on CRUSHIN!</p>
+        <p>🌟 You have earned 6 stars, keep on CRUSHIN! 🌟</p>
+        <p>🌟🌟🌟🌟🌟🌟</p>
         <LogOutButton className="btn" /> 
         <p></p>
         <p></p>
