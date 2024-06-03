@@ -6,10 +6,11 @@ import { useHistory } from "react-router-dom";
 // TODO:
 // X Create form
 // X Add local state
-// _ Dispatch redux actions or display a part of redux state 
+//  Dispatch redux actions or display a part of redux state 
 // _ Starcount logic
 // _ Enable maps API
 // _ Upload photos!
+
 // _ Center to screen
 
 function CreateCrush() {
@@ -19,7 +20,7 @@ function CreateCrush() {
   const userId = useSelector((store) => store.user.id);
   const username = useSelector((store) => store.user.username);
 
-console.log("where is the username?", username)
+  console.log("where is the username?", username)
 
   // Defining a local state to store the user's new crush
   const [crush_text , setCrush_text] = useState('');
@@ -33,7 +34,10 @@ console.log("where is the username?", username)
   const back = () => {
     history.push('/')
   }
-
+  // Back button
+  const SubmitGoToFeed = () => {
+    history.push('/LitterCRUSHED')
+  }
  const newCrush = () => {
     // const createdDate = new DateTime(now);
     //  const currentDateTime = new Date();
@@ -57,16 +61,17 @@ console.log("where is the username?", username)
     payload: crush,
   });
 
-  
-// console.log("are we crusing?", crush)
  }
 
   return (
     <div className="container">
       <h3>ADD NEW CRUSH!</h3>
       <p>What did you CRUSH?</p>
-      <form onSubmit={()=>newCrush()}>
-        {/* Callback function to say hey 'when clicked, run this function' */}
+      <form onSubmit={(event) => {
+        event.preventDefault();
+        newCrush();
+        SubmitGoToFeed();
+      }}>
       <input
         type="text"
         placeholder="" 
@@ -103,7 +108,6 @@ console.log("where is the username?", username)
       <button 
         variant='contained'
         type="submit"
-        onClick={back}
         >ADD CRUSH</button>
         </form>
       <p></p>

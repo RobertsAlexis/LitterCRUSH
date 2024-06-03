@@ -24,7 +24,12 @@ function EditCreateCrush() {
         payload: postToEdit
       })
     }, [])
-
+    // const getPost = () => {
+    //   dispatch({ type: 'FETCH_POST_TO_EDIT' });
+    // };
+    // useEffect(() => {
+    //   getPost();
+    // }, []);
 
   console.log('DID WE MAKE IT TO THE END OF THE EDIT COMPONENT? ', params)
     return (

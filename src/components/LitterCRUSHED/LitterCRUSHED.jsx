@@ -8,12 +8,10 @@ function LitterCRUSHED() {
 
   console.log('post 1 output', posts)
 
-  useEffect(() => {
-    dispatch({ type: 'FETCH_POSTS' });
-  }, []);
-   const getPosts = () => {
+  const getPosts = () => {
     dispatch({ type: 'FETCH_POSTS' });
   };
+
   useEffect(() => {
     getPosts();
   }, []);
