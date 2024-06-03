@@ -13,7 +13,7 @@ function EditCrush() {
     // use this id to nake a GET request to obtain the data for the single post to edit. 
     const post_id = params.post_id
     const history = useHistory()
-    const back = () => { history.push('/') }
+    const back = () => { history.push('/user') }
     
     // useEffect(() => {
     //   dispatch({

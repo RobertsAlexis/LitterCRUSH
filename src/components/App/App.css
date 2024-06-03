@@ -32,11 +32,12 @@ Button
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
+  background-color: #03297b;
   color: #f8f8f8;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .btn_sizeMin {
@@ -68,6 +69,7 @@ Button
   background: none;
   font: inherit;
   color: #444;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .btn_asLink:hover {
@@ -101,9 +103,10 @@ Form Treatment
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
+  background-color: lightgreen;
   border-radius: 3px;
-  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  box-shadow: 0 6px 2px rgb(0, 0, 0, 0.4);
+  font-family: "Times New Roman", Times, serif;
 }
 
 input {

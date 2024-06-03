@@ -16,9 +16,9 @@ function ProfileItem({ post }) {
   return (
   <div className="grid-container">
     <div>
-      🗑️ { post.username } earned { post.star_count } stars🌟 
-      <p>  { post.crush_text}  </p>
-      <p> at { post.where_crushed }📍</p>
+    🌟 { post.username } earned { post.star_count } stars🌟 
+      <p>  { post.crush_text} 🗑️ </p>
+      <p> 📍 { post.where_crushed }</p>
       <button className="btn" onClick={goToEditForm}>Edit</button>
       <p></p>
       <button className="btn" onClick={() => deleteMe(post.id)}>Delete</button>

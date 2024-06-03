@@ -6,7 +6,7 @@ import './LandingPage.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 function LandingPage() {
-  const [heading, setHeading] = useState('Welcome');
+  const [heading, setHeading] = useState('Welcome! 🌎');
   const history = useHistory();
 
   const onLogin = (event) => {
@@ -20,35 +20,39 @@ function LandingPage() {
       <div className="grid">
         <div className="grid-col grid-col_8">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
-            ut ex molestie blandit. Etiam et turpis sit amet risus mollis
-            interdum. Suspendisse et justo vitae metus bibendum fringilla sed
-            sed justo. Aliquam sollicitudin dapibus lectus, vitae consequat odio
-            elementum eget. Praesent efficitur eros vitae nunc interdum, eu
-            interdum justo facilisis. Sed pulvinar nulla ac dignissim efficitur.
-            Quisque eget eros metus. Vestibulum bibendum fringilla nibh a
-            luctus. Duis a sapien metus.
+          LitterCRUSH is not just another mobile game; it's a revolutionary
+          concept that merges the addictive nature of gaming with the 
+          real-world impact of environmental activism. Imagine embarking on a
+          thrilling adventure where every piece of litter you pick up 
+          translates into points, achievements, and social media recognition.
+          It's like Pokémon GO meets eco-warrior, and it's poised to 
+          revolutionize how we engage with both our smartphones and our planet.
           </p>
 
           <p>
-            Praesent consectetur orci dui, id elementum eros facilisis id. Sed
-            id dolor in augue porttitor faucibus eget sit amet ante. Nunc
-            consectetur placerat pharetra. Aenean gravida ex ut erat commodo, ut
-            finibus metus facilisis. Nullam eget lectus non urna rhoncus
-            accumsan quis id massa. Curabitur sit amet dolor nisl. Proin
-            euismod, augue at condimentum rhoncus, massa lorem semper lacus, sed
-            lobortis augue mi vel felis. Duis ultrices sapien at est convallis
-            congue.
+            In LitterCRUSH, players become eco-champions as they scour their
+            neighborhoods, parks, and beaches for discarded trash. Armed with
+            nothing but their smartphones and a passion for a cleaner world, 
+            they snap photos of the litter they collect and upload them to the
+            game's interface. Each bag of trash earns them a shiny gold star.
+
+            
+            LitterCRUSH is designed to be inherently social, allowing players 
+            to share their victories, challenges, and progress on various 
+            social media platforms. Picture your friends cheering you on as you
+            reach new milestones, or engaging in friendly competitions to see 
+            who can amass the most gold stars. It's not just about cleaning up 
+            the planet; it's about building a community of like-minded 
+            individual united by a common goal.
           </p>
 
           <p>
-            Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
-            Suspendisse posuere dapibus maximus. Aliquam vitae felis libero. In
-            vehicula sapien at semper ultrices. Vivamus sed feugiat libero. Sed
-            sagittis neque id diam euismod, ut egestas felis ultricies. Nullam
-            non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit
-            amet nisi.
+            And the best part? LitterCRUSH isn't just about virtual rewards;
+            it's about making a tangible difference in the world around us. 
+            With each bag of trash collected, players contribute to a cleaner,
+            healthier environment for themselves and future generations. It's
+            environmental activism disguised as entertainment, and it's bound
+            to capture the imagination of millions.
           </p>
         </div>
         <div className="grid-col grid-col_4">

@@ -13,6 +13,7 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
+import AboutPage from '../AboutPage/AboutPage';
 import LitterCRUSHED from '../LitterCRUSHED/LitterCRUSHED';
 import UserPage from '../Profile/Profile';
 import CreateCrush from '../CreateCrush/CreateCrush';
@@ -38,15 +39,15 @@ function App() {
         <Nav />
         <Switch>
           {/* Visiting localhost:5173 will redirect to localhost:5173/home */}
-          <Redirect exact from="/" to="/home" />
+          <Redirect exact from="/" to="/landingpage" />
 
           {/* Visiting localhost:5173/LitterCRUSHED will show the LitterCRUSHED page. */}
           <Route
             // shows LitterCRUSHED at all times (logged in or not)
             exact
-            path="/LitterCRUSHED"
+            path="/landingpage"
           >
-            <LitterCRUSHED />
+            <LandingPage />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
@@ -56,30 +57,38 @@ function App() {
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
-            path="/user"
-          >
+            path="/user">
             <UserPage />
           </ProtectedRoute>
 
           <ProtectedRoute
             // logged in shows CreateCrush else shows LoginPage
             exact
-            path="/CreateCrush"
-          >
+            path="/CreateCrush">
             <CreateCrush />
           </ProtectedRoute>
 
           <Route
             exact
-            path="/EditCrush/api/edit/:post_id/"  
-          >
-          <EditCrush />
+            path="/EditCrush/api/edit/:post_id/" >
+            <EditCrush />
           </Route>
 
           <Route
             exact
-            path="/login"
-          >
+            path="/LitterCRUSHED">
+            <LitterCRUSHED />
+          </Route>
+
+          <Route
+            exact
+            path="/about">
+            <AboutPage />
+          </Route>
+
+          <Route
+            exact
+            path="/login">
             {user.id ?
               // If the user is already logged in,  
               // redirect to the /user page
@@ -92,8 +101,7 @@ function App() {
 
           <Route
             exact
-            path="/registration"
-          >
+            path="/registration">
             {user.id ?
               // If the user is already logged in, 
               // redirect them to the /user page
@@ -106,8 +114,7 @@ function App() {
 
           <Route
             exact
-            path="/home"
-          >
+            path="/home">
             {user.id ?
               // If the user is already logged in, 
               // redirect them to the /user page
@@ -120,7 +127,7 @@ function App() {
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
-            <h1>Bitch you lost 404</h1>
+            <h1>Oooooh. . . you lost 404</h1>
           </Route>
         </Switch>
         <Footer />
