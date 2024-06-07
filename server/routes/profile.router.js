@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     const queryText = ` SELECT * FROM post WHERE user_id = '25' ;`
     // THE ONE THAT SHOULD WORK       ` SELECT * FROM post WHERE user_id = $1;`
   pool.query(queryText)
-    .then((result) => { console.log('am i getting the data ', result.rows)
+    .then((result) => { //console.log('am i getting the data ', result.rows)
       res.send(result.rows); })
     .catch((err) => {
       console.log('Error in GET /api/profile', err);

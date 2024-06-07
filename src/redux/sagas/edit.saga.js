@@ -39,7 +39,6 @@ function* updatePost(action) {
       data: editedPostData
     })
     yield put({
-      // type: 'FETCH_POSTS'
       type: 'FETCH_PROFILE_POSTS'
     })
   } catch (err) {

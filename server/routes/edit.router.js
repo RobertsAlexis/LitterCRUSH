@@ -3,7 +3,7 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 /* GET  --- SINGLE POST ---    /post/:post_id // step 2 */
-router.get('/:post_id', (req, res) => { console.log('In the edit router, attempting to GET', req.params.post_id)
+router.get('/:post_id', (req, res) => { // console.log('In the edit router, attempting to GET', req.params.post_id)
   const postId = req.params.post_id; // Extract post ID from URL params
   const sqlText = `
     SELECT * FROM post 

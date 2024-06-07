@@ -4,7 +4,6 @@ const router = express.Router();
 
 /* GET /post/:post_id */
 router.get('/', (req, res) => {
-  // console.log('HEEEEEEEEEEEEEEEY we are in the posts router!!!', queryText)
     const queryText = `
       SELECT * FROM post ORDER BY post_id DESC; 
     `

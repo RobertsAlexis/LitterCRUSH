@@ -2,10 +2,11 @@ import { takeLatest, put } from "redux-saga/effects";
 import axios from 'axios';
 
   function* deletePost(action) {
+    console.log('theThingToDelete is:', action.payload)
     try {
-      yield axios.delete(`api/posts/${action.payload}`);
+      yield axios.delete(`/api/delete/${action.payload}`);
       yield put({
-        type: 'DELETE_POST',
+        type: 'DELETE_ITEM',
         payload: action.payload
       });
     }
@@ -13,5 +14,8 @@ import axios from 'axios';
       console.log('Error in Delete', err)
     }
   };
+  function* deleteSaga () {
+    yield takeLatest('DELETE_POST', deletePost);
+};
 
-  export default deletePost; 
+  export default deleteSaga; 
