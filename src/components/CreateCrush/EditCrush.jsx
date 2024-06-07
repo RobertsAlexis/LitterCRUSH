@@ -23,17 +23,10 @@ function EditCrush() {
       });
     }, []);
 
-    // const getPost = () => {
-    //   dispatch({ type: 'FETCH_POST_TO_EDIT' });
-    // };
-    // useEffect(() => {
-    //   getPost();
-    // }, []);
-
+// step 2
   const postToEdit = useSelector(store => store.postToEdit)
 
-
-    console.log('DID WE MAKE IT TO THE END OF THE EDIT COMPONENT? ', params)
+  console.log('DID WE MAKE IT TO THE END OF THE EDIT COMPONENT? ', params)
 // sends a dispatch to edit reducer 
   const handlePostChange = (event) => {
     const { name, value } = event.target;
