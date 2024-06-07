@@ -5,7 +5,7 @@ import userSaga from './user.saga';
 import userPostSaga from './user.post.saga';
 import postsSaga from './posts.saga';
 import profileSaga from './profile.saga';
-import postToEditSaga from './edit.saga';
+import editSaga from './edit.saga';
 import deletePostSaga from './delete.post.saga.js';
 
 // rootSaga is the primary saga.
@@ -23,7 +23,7 @@ export default function* rootSaga() {
     userPostSaga(),
     postsSaga(),
     profileSaga(),
-    postToEditSaga(),
+    editSaga(),
     deletePostSaga(),
   ]);
 }

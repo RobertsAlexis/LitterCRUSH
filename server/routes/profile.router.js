@@ -2,15 +2,12 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-// UNSURE OF '/post_id'
 /* GET /profile post/:post_id */
 router.get('/', (req, res) => {
-  const user_id = req.user.id  
-  console.log('WAAQAAAAAAAAAAAAZZZZZZ AAAAAAHHHHHHHHUP??????', user_id)
-  const queryText = ` SELECT * FROM post WHERE user_id = $1 ;`
+    const queryText = ` SELECT * FROM post WHERE user_id = '25' ;`
     // THE ONE THAT SHOULD WORK       ` SELECT * FROM post WHERE user_id = $1;`
-  pool.query(queryText, [user_id])
-    .then((result) => { console.log('!!!!!!!!!!!!!!!!!!!!!!!!am i getting the data ', result.rows)
+  pool.query(queryText)
+    .then((result) => { console.log('am i getting the data ', result.rows)
       res.send(result.rows); })
     .catch((err) => {
       console.log('Error in GET /api/profile', err);

@@ -16,24 +16,10 @@ function* addPost(action) {
   } catch (err) {
       console.log(err)
   }
-}
+};
 
 function* userPostSaga () {
     yield takeLatest('ADD_POST', addPost);
 };
 
 export default userPostSaga;
-
-// this one breaks things
-// function* addPost(action) {
-//     console.log('addUserPost Saga', action.payload);
-//     try {
-//         yield axios('/api/user-post', action.payload);
-//         yield put ({
-//             type: 'FETCH_POSTS',
-//             payload: action.payload,
-//         });
-//     } catch (err) {
-//         console.log('AXIOS | POST in ADD post', err);
-//     }
-// };
