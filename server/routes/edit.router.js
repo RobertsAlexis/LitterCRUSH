@@ -22,7 +22,7 @@ const router = express.Router();
 //       })
 //   })
 // GET route to fetch a single post by its ID
-router.get('/:post_id', (req, res) => {
+router.get('/:post_id', (req, res) => { console.log('HEY MISS LISA', req.params)
   const postId = req.params.post_id; // Extract post ID from URL params
   const sqlText = 'SELECT * FROM post WHERE post_id = $1'; // SQL query to fetch post by ID
   const sqlValues = [postId]; // Values for the SQL query
@@ -30,6 +30,7 @@ router.get('/:post_id', (req, res) => {
   pool.query(sqlText, sqlValues)
     .then((dbRes) => {
       const singlePost = dbRes.rows[0]; // Extract single post from database response
+      console.log('DO WE HAVE JASON????', singlePost)
       res.json(singlePost); // Return the single post as JSON response
     })
     .catch((dbErr) => {

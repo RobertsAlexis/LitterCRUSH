@@ -5,21 +5,23 @@ import axios from 'axios';
 function* fetchPostToEdit(action) {
     try {
       console.log('aaaaaaaaaaaare we in the edit saga?', fetchPostToEdit)
-      const post_id = action.payload
+    
+      const post_id = action.payload.post_id 
+      console.log('***********************************************', post_id )
       
       const response = yield axios({
         method: 'GET',
-        url: `/EditCrush/api/edit/${post_id}`
+        url: `/api/edit/${post_id}`
       });
-      console.log('in the edit saga', fetchPostToEdit)
+      console.log('in the edit saga', response.data)
       // changing payload from postToEdit to response.data
       const postToEdit = response.data
       // once we get the post we want to edit we will sent it to the postToEdit reducer
       console.log('postToEdit inside fetchPostToEdit saga function is', postToEdit)
-      // yield put({
-      //   type: 'SET_POST_TO_EDIT',
-      //   payload: postToEdit
-      // })
+      yield put({
+        type: 'SET_POST_TO_EDIT',
+        payload: postToEdit
+      })
     } catch (err) {
       console.log('YOOOOOOOOOOOOOOOO fetchPostToEdit error:', err)
     }

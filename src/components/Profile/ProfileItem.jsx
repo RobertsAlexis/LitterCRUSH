@@ -7,7 +7,7 @@ function ProfileItem({ post }) {
   const dispatch = useDispatch();
   const goToEditForm = () => {
     console.log('need to edit post with id of:', post.post_id)
-    history.push(`/EditCrush/api/edit/:post_id${post.post_id}`)
+    history.push(`/EditCrush/api/edit/${post.post_id}`)
   }
   const deleteMe = (deleteId) => {
     dispatch({ type: 'DELETE_POST', payload: deleteId });

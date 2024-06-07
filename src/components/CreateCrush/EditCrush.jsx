@@ -12,6 +12,7 @@ function EditCrush() {
     const dispatch = useDispatch();
     // use this id to nake a GET request to obtain the data for the single post to edit. 
     const post_id = params.post_id
+    console.log('HAAAAVVVVVEEE WE MADE IT INTO THE EDIT CRUSH COMPONENT', post_id)
     const history = useHistory()
     const back = () => { history.push('/user') }
     
@@ -22,21 +23,22 @@ function EditCrush() {
     //   })
     // }, [])
     useEffect(() => {
+      console.log("CAN WE POST THE ID", post_id)
       dispatch({
         type: 'FETCH_POST_TO_EDIT',
-        payload: post_id
+        payload: {post_id:post_id}
       });
     }, [dispatch, post_id]);
     
     const postToEdit = useSelector(store => store.postToEdit)
     // const post = useSelector(store => store.post)
 
-    const getPost = () => {
-      dispatch({ type: 'FETCH_POST_TO_EDIT' });
-    };
-    useEffect(() => {
-      getPost();
-    }, []);
+    // const getPost = () => {
+    //   dispatch({ type: 'FETCH_POST_TO_EDIT' });
+    // };
+    // useEffect(() => {
+    //   getPost();
+    // }, []);
 
   console.log('DID WE MAKE IT TO THE END OF THE EDIT COMPONENT? ', params)
 
