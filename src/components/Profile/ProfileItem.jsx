@@ -8,14 +8,13 @@ function ProfileItem({ post }) {
     console.log('need to edit post with id of:', post.post_id)
     history.push(`/EditCrush/api/edit/${post.post_id}`)
   };
-
+  console.log('starcount', post.star_count)
   const deleteMe = (post_id) => {
     dispatch({ 
       type: 'DELETE_POST', 
       payload: post_id 
     });
   };
-
   return (
   <div className="grid-container">
     <div>
@@ -27,7 +26,6 @@ function ProfileItem({ post }) {
       <button className="btn" onClick={() => deleteMe(post.post_id)}>Delete</button>
     </div>
   </div>
-    
   );
 };
   export default ProfileItem;  
